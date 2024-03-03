@@ -10,7 +10,6 @@ function FittsTest() {
     history.push('/conclusion')
   }
 
-  //const [difficulty, setDifficulty] = useState(diff);
   const [clickTimes, setClickTimes] = useState([]);
   const target1Ref = useRef(null);
   const target2Ref = useRef(null);
@@ -29,16 +28,6 @@ function FittsTest() {
   
 
   const [timesBetween, setTimesBetween] = useState([]);
-
-  // const handleWidthChange = (event) => {
-  //   setWidth(event.target.value);
-  //   setDifficultyIndex(calculateDifficultyIndex(event.target.value, distance));
-  // };
-
-  // const handleDistanceChange = (event) => {
-  //   setDistance(event.target.value);
-  //   setDifficultyIndex(calculateDifficultyIndex(width, event.target.value));
-  // };
 
   const handleTargetClick = () => {
     setClickTimes((prevTimes) => [...prevTimes, Date.now()]);
@@ -69,10 +58,6 @@ function FittsTest() {
     }
   },[numTrials])
   
-  // useEffect(() => {
-  //   //setDifficultyIndex(calculateDifficultyIndex(width, distance));
-  // }, []);
-
   return (
     <div>
       <p>ID: {difficulty}</p>
@@ -108,17 +93,6 @@ function FittsTest() {
       </div>
     </div>
   );
-}
-
-function calculateDifficultyIndex(width, distance) {
-  // log_2(d/w + 1.0)
-  // 2: d = 3w
-  // 3: d = 7w
-  // 4: d = 15w
-  // 5: d = 31w
-  // 6: d = 63w
-
-  return Math.log2(distance / width + 1);
 }
 
 function getWidthDist(difficulty,trial){
